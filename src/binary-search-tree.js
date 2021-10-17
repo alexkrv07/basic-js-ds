@@ -31,13 +31,13 @@ module.exports = class BinarySearchTree {
           if (node.left === null) {
               node.left = newNode;
           } else {
-              this.insertNode(node.left, newNode);
+              insertNode(node.left, newNode);
           }
       } else {
           if (node.right === null) {
               node.right = newNode;
           } else {
-              this.insertNode(node.right, newNode);
+              insertNode(node.right, newNode);
           }
       }
     }

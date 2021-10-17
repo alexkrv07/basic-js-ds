@@ -43,7 +43,7 @@ module.exports = function removeKFromList(l, k) {
   return head;
 
 
-// git commit -m "init: start CodeJam CSSMemSlider-task `date +'%Y-%m-%d %H:%M:%S'`"
+
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
@@ -71,3 +71,6 @@ module.exports = function removeKFromList(l, k) {
 // %Y      Year with century, as decimal number
 // %z, %Z  Either the time-zone name or time zone abbreviation, depending on registry settings
 // %%      Percent sign
+
+// git commit -m "init: start CodeJam CSSMemSlider-task `date +'%a, %b %d, %Y  %I:%M:%S %p'`"
+// git commit -m "init: start CodeJam CSSMemSlider-task `date +'%Y-%m-%d %H:%M:%S'`"

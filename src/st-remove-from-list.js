@@ -72,5 +72,5 @@ module.exports = function removeKFromList(l, k) {
 // %z, %Z  Either the time-zone name or time zone abbreviation, depending on registry settings
 // %%      Percent sign
 
-// git commit -m "init: start CodeJam CSSMemSlider-task `date +'%a, %b %d, %Y  %I:%M:%S %p'`"
+// git commit -m "init: start CodeJam CSSMemSlider-task (`date +'%a, %b %d, %Y  %I:%M:%S %p'`)"
 // git commit -m "init: start CodeJam CSSMemSlider-task `date +'%Y-%m-%d %H:%M:%S'`"

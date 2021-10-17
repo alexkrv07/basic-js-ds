@@ -20,7 +20,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
 module.exports = function removeKFromList(l, k) {
-  
+
   let head = l;
   let prev = null;
   let current = l;
@@ -40,6 +40,7 @@ module.exports = function removeKFromList(l, k) {
     }
   } while(current);
   l = head;
+  return head;
 
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here

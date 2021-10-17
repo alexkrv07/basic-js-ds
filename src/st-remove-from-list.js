@@ -29,6 +29,7 @@ module.exports = function removeKFromList(l, k) {
     if (current.value === k) {
       if (!prev) {
         head = head.next;
+        current = current.next;
       }
       else {
         prev.next = current.next;
@@ -74,3 +75,6 @@ module.exports = function removeKFromList(l, k) {
 
 // git commit -m "init: start CodeJam CSSMemSlider-task (`date +'%a, %b %d, %Y  %I:%M:%S %p'`)"
 // git commit -m "init: start CodeJam CSSMemSlider-task `date +'%Y-%m-%d %H:%M:%S'`"
+
+// git commit -m "feat: add basic color (`date +'%a, %b %d, %Y  %I:%M:%S %p'`)"
+// git commit -m "feat: add 4th mem (`date +'%a, %b %d, %Y  %I:%M:%S %p'`)"

@@ -7,7 +7,6 @@ const { Node } = require('../extensions/list-tree.js');
 * using Node from extensions
 */
 module.exports = class BinarySearchTree {
-
   constructor() {
     this.tree = null;
   }
@@ -52,7 +51,7 @@ module.exports = class BinarySearchTree {
     if (!this.root()) {
       return false;
     } else {
-      helpHas(this.tree, data);
+      return helpHas(this.tree, data);
     }
 
 
@@ -75,7 +74,7 @@ module.exports = class BinarySearchTree {
     if (!this.root()) {
       return null;
     } else {
-      helpFind(this.tree, data);
+      return helpFind(this.tree, data);
     }
 
 
@@ -92,19 +91,56 @@ module.exports = class BinarySearchTree {
     }
   }
 
-  remove(/* data */) {
-    throw new NotImplementedError('Not implemented');
+  remove(data) {
+    // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+
+    this.tree = this.removeNode(this.tree, data);
   }
 
-  min() {
-    if (!this.root()) {
+  removeNode(node, data) {
+    if (node === null) {
+        return null;
+    // если данные, которые нужно удалить, меньше, чем данные корня, переходим к левому поддереву
+    } else if (data < node.data) {
+        node.left = this.removeNode(node.left, data);
+        return node;
+    // если данные, которые нужно удалить, больше, чем данные корня, переходим к правому поддереву
+    } else if (data > node.data) {
+        node.right = this.removeNode(node.right, data);
+        return node;
+    // если данные такие как данные корня, удаляем узел
+    } else {
+        // удаляем узел без потомков (листовой узел (leaf) или крайний)
+      if (node.left === null && node.right === null) {
+          node = null;
+          return node;
+      }
+      // удаляем узел с одним потомком
+      if (node.left === null) {
+          node = node.right;
+          return node;
+      } else if(node.right === null) {
+          node = node.left;
+          return node;
+      }
+      // удаляем узел с двумя потомками
+      // minNode правого поддерева хранится в новом узле
+      let newData = this.min(node.right);
+      node.data = newData;
+      node.right = this.removeNode(node.right, newData);
+      return node;
+    }
+  }
+
+  min(node = this.tree) {
+    if (!node) {
       return null;
     }
-    let min = this.tree;
+    let min = node;
 
     while (min.left) {
-      min = max.left;
+      min = min.left;
     }
     return min.data;
     // throw new NotImplementedError('Not implemented');
